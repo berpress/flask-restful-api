@@ -5,7 +5,7 @@ The API comes with projects tests on Python (coming soon JS and JAVA).
 Restful-app also comes with detailed API documentation to help get you started with your API testing straight away.
 
 ### Testing app:
-https://xxxx.herokuapp.com
+https://stores-tests-api.herokuapp.com
 
 Also, you can use Docker and test this app local
 
@@ -30,6 +30,15 @@ python 3.8/requests/pytest/flask
 
 4. Use pre-commit hook https://pre-commit.com/#install
 5. Run tests from the folder **tests** with pytest or see **Makefile**
+## Commands
+
+make +
+
+Command | Description
+------------ | -------------
+lint |  Start linting
+start | Start local app
+tests | Run all tests
 
 ## API Documentation
 
@@ -45,16 +54,18 @@ First, learn about  sequence of entity creation
 
 ## Register
 ### Register user
-Register new user
+
+<details>
+<summary>Register new user</summary>
 
 <span style="color:green">**POST**</span>
    ```buildoutcfg
-    https://restfulapi.herokuapp.com/register
+    https://stores-tests-api.herokuapp.com/register
    ```
 Example
    ```buildoutcfg
   curl -X POST
-  https://restful-api.herokuapp.com/auth \
+  https://stores-tests-api.herokuapp.com/register \
   -H 'Content-Type: application/json' \
   -d '{
     "username" : "admin",
@@ -82,14 +93,47 @@ Field | Type |Description
 message | str | Success message
 uuid | str | user uuid
 
+</details>
 
-**Status code 400**
+
+## Authentication
+### Authentication user
+
+<details>
+  <summary>Authentication user</summary>
+
+   <span style="color:green">**POST**</span>
+   ```buildoutcfg
+    https://stores-tests-api.herokuapp.com/auth
+   ```
+Example
+   ```buildoutcfg
+  curl -X POST
+  https://stores-tests-api.herokuapp.com/auth \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "username" : "admin",
+    "password" : "Password11"
+}'
+```
+
+**Body**
+
+Field | Type |Description
+------------ | -------------| -------------
+password | str | User password
+username | str |User username
+
+**Response**
+
+**Status code 200**
 
    ```buildoutcfg
-    {'message': 'A user with that username already exists', 'uuid': 1}
+    '{"access_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9..."}'
    ```
 
 Field | Type |Description
 ------------ | -------------| -------------
-message | str | Description error
-uuid | str | user uuid
+access_token | str | Access token
+
+</details>
