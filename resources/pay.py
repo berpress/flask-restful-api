@@ -34,4 +34,9 @@ class Pay(Resource):
             balance.save_to_db()
         except:
             return {"message": "An error occurred buy item"}, 500
-        return {"message": f"Payment was successful. New balance is {balance.balance}"}
+        return {
+            "message": "Payment was successful",
+            "balance": balance.balance,
+            "name": item.name,
+            "price": item.price,
+        }

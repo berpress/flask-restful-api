@@ -4,6 +4,7 @@ from flask_jwt import JWT
 
 from resources.balance import Balance
 from resources.pay import Pay
+from resources.user_info import UserInfo
 from security import authenticate, identity
 from resources.user import UserRegister
 from resources.item import Item, ItemList
@@ -31,6 +32,7 @@ api.add_resource(ItemList, "/items")
 api.add_resource(UserRegister, "/register")
 api.add_resource(Balance, "/balance/<int:uuid>")
 api.add_resource(Pay, "/pay/<int:uuid>")
+api.add_resource(UserInfo, "/user_info/<int:uuid>")
 
 
 if __name__ == "__main__":

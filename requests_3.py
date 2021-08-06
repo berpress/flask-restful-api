@@ -19,6 +19,59 @@ token = response_auth.json()["access_token"]
 print(response_auth.text)
 print("____________________")
 
+# add user informational
+print("add user informational")
+payload_info = {
+    "phone": "122434",
+    "email": "test@test.com",
+    "address": {"city": "Kazan", "street": "Prospect pobedy", "home_number": "12"},
+}
+response_add_user_info = requests.request(
+    "POST",
+    base_url + f"/user_info/{user_id}",
+    json=payload_info,
+    headers={"Authorization": f"JWT {token}"},
+)
+print(response_add_user_info.text)
+print("____________________")
+
+
+# edit user informational
+print("edit user informational")
+payload_info = {
+    "phone": "77777",
+    "email": "name@test.com",
+    "address": {"city": "NY", "street": "Louge street", "home_number": "209"},
+}
+response_edit_user_info = requests.request(
+    "PUT",
+    base_url + f"/user_info/{user_id}",
+    json=payload_info,
+    headers={"Authorization": f"JWT {token}"},
+)
+print(response_edit_user_info.text)
+print("____________________")
+
+# get user informational
+print("get user informational")
+response_get_user_info = requests.request(
+    "GET",
+    base_url + f"/user_info/{user_id}",
+    json=payload_info,
+    headers={"Authorization": f"JWT {token}"},
+)
+print(response_get_user_info.text)
+print("____________________")
+
+# delete user informational
+print("delete user informational")
+response_delete_user_info = requests.request(
+    "DELETE",
+    base_url + f"/user_info/{user_id}",
+    headers={"Authorization": f"JWT {token}"},
+)
+print(response_delete_user_info.text)
+print("____________________")
 
 # create store
 print("create store")
