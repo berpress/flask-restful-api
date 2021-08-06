@@ -1,11 +1,71 @@
-# flask-restful-api
+openapi: 3.0.0
+tags:
+  - name: version
+    description: Version
+  - name: access_requests
+    description: Access requests for projects and groups
+  - name: access_tokens
+    description: Access tokens for projects
+info:
+  description: |
+    An OpenAPI definition for the GitLab REST API.
+    Few API resources or endpoints are currently included.
+    The intent is to expand this to match the entire Markdown documentation of the API:
+    <https://docs.gitlab.com/ee/api/>. Contributions are welcome.
 
-How to start
+    When viewing this on gitlab.com, you can test API calls directly from the browser
+    against the `gitlab.com` instance, if you are logged in.
+    The feature uses the current [GitLab session cookie](https://docs.gitlab.com/ee/api/index.html#session-cookie),
+    so each request is made using your account.
 
-Use python 3.8 +
-Create and activate virtual environments
+    Instructions for using this tool can be found in [Interactive API Documentation](openapi_interactive.md).
 
-```
-python3 -m venv env
-source env/bin/activate
-```
+  version: v4
+  title: GitLab API
+  termsOfService: 'https://about.gitlab.com/terms/'
+  license:
+    name: CC BY-SA 4.0
+    url: 'https://gitlab.com/gitlab-org/gitlab/-/blob/master/LICENSE'
+servers:
+  - url: 'https://gitlab.com/api/'
+security:
+  - ApiKeyAuth: []
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Private-Token
+
+paths:
+  # VERSION
+  /v4/version:
+    $ref: 'v4/version.yaml'
+
+  # ACCESS REQUESTS (PROJECTS)
+  /v4/projects/{id}/access_requests:
+    $ref: 'v4/access_requests.yaml#/accessRequestsProjects'
+
+  /v4/projects/{id}/access_requests/{user_id}/approve:
+    $ref: 'v4/access_requests.yaml#/accessRequestsProjectsApprove'
+  
+  /v4/projects/{id}/access_requests/{user_id}:
+    $ref: 'v4/access_requests.yaml#/accessRequestsProjectsDeny'
+
+  # ACCESS REQUESTS (GROUPS)
+  /v4/groups/{id}/access_requests:
+    $ref: 'v4/access_requests.yaml#/accessRequestsGroups'
+
+  /v4/groups/{id}/access_requests/{user_id}/approve:
+    $ref: 'v4/access_requests.yaml#/accessRequestsGroupsApprove'
+  
+  /v4/groups/{id}/access_requests/{user_id}:
+    $ref: 'v4/access_requests.yaml#/accessRequestsGroupsDeny'
+
+  # ACCESS REQUESTS (PROJECTS)
+  /v4/projects/{id}/access_tokens:
+    $ref: 'v4/access_tokens.yaml#/accessTokens'
+
+  /v4/projects/{id}/access_tokens/{token_id}:
+    $ref: 'v4/access_tokens.yaml#/accessTokensRevoke'
