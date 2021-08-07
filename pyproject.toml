@@ -15,6 +15,7 @@ Flask-JWT = "^0.3.2"
 Flask-SQLAlchemy = "^2.5.1"
 apispec = "^5.0.0"
 marshmallow = "^3.13.0"
+pytest = "^6.2.4"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.9.2"

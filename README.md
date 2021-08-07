@@ -1,3 +1,4 @@
+![example workflow](https://github.com/berpress/flask-restful-api/actions/workflows/tests.yml/badge.svg)
 
 # Restfull api (app for testing)
 Welcome to Restful-app an API that you can use to learn more about API Testing or try out API testing tools against.
