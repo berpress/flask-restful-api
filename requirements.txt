@@ -2,5 +2,6 @@ Flask
 Flask-JWT
 Flask-RESTful
 Flask-SQLAlchemy
+pre-commit
 psycopg2
 uwsgi
