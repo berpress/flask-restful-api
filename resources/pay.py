@@ -25,7 +25,7 @@ class Pay(Resource):
         new_balance = balance.balance - item.price
         if new_balance < 0:
             return {
-                "message": f"Not enough money. Your balance is {balance}, "
+                "message": f"Not enough money. Your balance is {balance.balance}, "
                 f"item cost {item.price}"
             }, 400
         else:
