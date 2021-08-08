@@ -1,5 +1,5 @@
 ![example workflow](https://github.com/berpress/flask-restful-api/actions/workflows/tests.yml/badge.svg)
-
+[![Maintainability](https://api.codeclimate.com/v1/badges/f0089622634b09f251e9/maintainability)](https://codeclimate.com/github/berpress/flask-restful-api/maintainability)
 # Restfull api (app for testing)
 Welcome to Restful-app an API that you can use to learn more about API Testing or try out API testing tools against.
 The API comes with projects tests on Python (coming soon JS and JAVA).
