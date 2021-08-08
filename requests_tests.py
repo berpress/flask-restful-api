@@ -1,7 +1,7 @@
 import requests
 
-# base_url = "http://127.0.0.1:5000" // local run
-base_url = "https://stores-tests-api.herokuapp.com"  # // run on heroku
+base_url = "http://127.0.0.1:5000"  # // local run
+# base_url = "https://stores-tests-api.herokuapp.com"  # // run on heroku
 
 # create user
 print("create user")

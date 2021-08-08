@@ -1,3 +1,5 @@
+from models.item import ItemModel
+from models.store import StoreModel
 from models.user import UserModel
 
 
@@ -12,23 +14,23 @@ def test_new_user():
 
 def test_new_item():
     """
-    Check user model
+    Check item model
     """
-    user = UserModel("patkennedy79@gmail.com", "FlaskIsAwesome")
-    assert user.username == "patkennedy79@gmail.com"
-    assert user.password == "FlaskIsAwesome"
+    item = ItemModel(name="TestItem", price=100.0, store_id=1)
+    assert item.store_id == 1
+    assert item.price == 100.0
+    assert item.name == "TestItem"
 
 
 def test_new_store():
     """
-    Check user model
+    Check store model
     """
-    user = UserModel("patkennedy79@gmail.com", "FlaskIsAwesome")
-    assert user.username == "patkennedy79@gmail.com"
-    assert user.password == "FlaskIsAwesome"
+    store = StoreModel(name="FlaskIsAwesome")
+    store.name = "FlaskIsAwesome"
 
 
-def test_new_user_info():
+def test_new_user_balance():
     """
     Check user model
     """
