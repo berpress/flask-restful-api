@@ -139,3 +139,173 @@ Field | Type |Description
 access_token | str | Access token
 
 </details>
+
+## User info
+### User information
+
+<details>
+  <summary>Add user information</summary>
+
+   <span style="color:green">**POST**</span>
+   ```buildoutcfg
+    https://stores-tests-api.herokuapp.com/user_info/{user_id}
+   ```
+Example
+   ```buildoutcfg
+  curl -X POST
+  https://stores-tests-api.herokuapp.com/user_info/1 \
+  -H 'Content-Type: application/json' \
+  -d '{
+        "phone": "122434",
+        "email": "test@test.com",
+        "address": {
+            "city": "Kazan",
+            "street": "Limonova",
+            "home_number": "11"
+            },
+    }'
+```
+
+**Body**
+
+Field | Type |Description
+------------ | -------------| -------------
+phone | str | User phone
+email | str |User email
+address | Object |Address object
+address/city | str | User city
+address/street | str |User street
+address/home_number | str |User home number
+
+
+
+**Response**
+
+**Status code 200**
+
+   ```buildoutcfg
+    '{"message":"User info created successfully."}'
+   ```
+
+Field | Type |Description
+------------ | -------------| -------------
+message | str | Result user info action
+
+</details>
+
+<details>
+  <summary>Get user information</summary>
+
+   <span style="color:green">**GET**</span>
+   ```buildoutcfg
+    https://stores-tests-api.herokuapp.com/user_info/{user_id}
+   ```
+Example
+   ```buildoutcfg
+  curl -X GET
+  https://stores-tests-api.herokuapp.com/user_info/1 \
+  -H 'Content-Type: application/json' \'
+```
+
+
+
+**Response**
+
+**Status code 200**
+
+   ```buildoutcfg
+    '{'city': 'NY', 'street': 'Louge street', 'userID': 1, 'phone': '77777', 'email': 'name@test.com'}'
+   ```
+
+Field | Type |Description
+------------ | -------------| -------------
+city | str | User city
+street | str | User street
+phone | str | User phone
+email | str | User email
+
+
+</details>
+
+<details>
+  <summary>Delete user information</summary>
+
+   <span style="color:green">**DELETE**</span>
+   ```buildoutcfg
+    https://stores-tests-api.herokuapp.com/user_info/{user_id}
+   ```
+Example
+   ```buildoutcfg
+  curl -X DELETE
+  https://stores-tests-api.herokuapp.com/auth \
+  -H 'Content-Type: application/json' \
+```
+
+
+
+**Response**
+
+**Status code 200**
+
+   ```buildoutcfg
+    '{"message":"User info deleted."}'
+   ```
+
+Field | Type |Description
+------------ | -------------| -------------
+message | str | Result user info action
+
+</details>
+
+<details>
+  <summary>Edit user information</summary>
+
+   <span style="color:green">**PUT**</span>
+   ```buildoutcfg
+    https://stores-tests-api.herokuapp.com/user_info/{user_id}
+   ```
+Example
+   ```buildoutcfg
+  curl -X PUT
+  https://stores-tests-api.herokuapp.com/auth \
+  -H 'Content-Type: application/json' \
+  -d '{
+        "phone": "122434",
+        "email": "test@test.com",
+        "address": {
+            "city": "Kazan",
+            "street": "Limonova",
+            "home_number": "11"
+            },
+    }'
+```
+
+**Body**
+
+Field | Type |Description
+------------ | -------------| -------------
+phone | str | User phone
+email | str |User email
+address | Object |Address object
+address/city | str | User city
+address/street | str |User street
+address/home_number | str |User home number
+
+
+
+**Response**
+
+**Status code 200**
+
+   ```buildoutcfg
+    '{'city': 'NY', 'street': 'Louge street', 'userID': 1, 'phone': '77777', 'email': 'name@test.com'}'
+   ```
+
+Field | Type |Description
+------------ | -------------| -------------
+city | str | User city
+street | str | User street
+phone | str | User phone
+email | str | User email
+
+</details>
