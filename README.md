@@ -140,7 +140,6 @@ access_token | str | Access token
 
 </details>
 
-## User info
 ### User information
 
 <details>
@@ -184,7 +183,7 @@ address/home_number | str |User home number
 **Status code 200**
 
    ```buildoutcfg
-    '{"message":"User info created successfully."}'
+    {"message":"User info created successfully."}
    ```
 
 Field | Type |Description
@@ -214,7 +213,7 @@ Example
 **Status code 200**
 
    ```buildoutcfg
-    '{'city': 'NY', 'street': 'Louge street', 'userID': 1, 'phone': '77777', 'email': 'name@test.com'}'
+    {'city': 'NY', 'street': 'Louge street', 'userID': 1, 'phone': '77777', 'email': 'name@test.com'}
    ```
 
 Field | Type |Description
@@ -248,7 +247,7 @@ Example
 **Status code 200**
 
    ```buildoutcfg
-    '{"message":"User info deleted."}'
+    {"message":"User info deleted."}
    ```
 
 Field | Type |Description
@@ -298,7 +297,7 @@ address/home_number | str |User home number
 **Status code 200**
 
    ```buildoutcfg
-    '{'city': 'NY', 'street': 'Louge street', 'userID': 1, 'phone': '77777', 'email': 'name@test.com'}'
+    {'city': 'NY', 'street': 'Louge street', 'userID': 1, 'phone': '77777', 'email': 'name@test.com'}
    ```
 
 Field | Type |Description
@@ -307,5 +306,319 @@ city | str | User city
 street | str | User street
 phone | str | User phone
 email | str | User email
+
+</details>
+
+### Store magazine
+
+<details>
+  <summary>Add store</summary>
+
+   <span style="color:green">**POST**</span>
+   ```buildoutcfg
+    https://stores-tests-api.herokuapp.com/store/{name_store}
+   ```
+Example
+   ```buildoutcfg
+  curl -X POST
+  https://stores-tests-api.herokuapp.com/store/cars \
+  -H 'Content-Type: application/json' \
+```
+
+**Response**
+
+**Status code 200**
+
+   ```buildoutcfg
+    {"name": "cars", "items": []}
+   ```
+
+Field | Type |Description
+------------ | -------------| -------------
+name | str | Store name
+items | list | List of store items
+
+
+</details>
+
+<details>
+  <summary>Get store</summary>
+
+   <span style="color:green">**GET**</span>
+   ```buildoutcfg
+    https://stores-tests-api.herokuapp.com/store/{name_store}
+   ```
+Example
+   ```buildoutcfg
+  curl -X POST
+  https://stores-tests-api.herokuapp.com/store/cars \
+  -H 'Content-Type: application/json' \
+```
+
+**Response**
+
+**Status code 200**
+
+   ```buildoutcfg
+    {"name": "cars", "items": []}
+   ```
+
+Field | Type |Description
+------------ | -------------| -------------
+name | str | Store name
+items | list | List of store items
+
+
+</details>
+
+### Store items
+
+<details>
+  <summary>Add item</summary>
+
+   <span style="color:green">**POST**</span>
+   ```buildoutcfg
+    https://stores-tests-api.herokuapp.com/item/{name_item}
+   ```
+Example
+   ```buildoutcfg
+  curl -X POST
+  https://stores-tests-api.herokuapp.com/item/bmw \
+  -H 'Content-Type: application/json' \
+  -d '{
+        "price": 2000,
+        "store_id": 1
+      }'
+```
+
+**Body**
+
+Field | Type |Description
+------------ | -------------| -------------
+price | int | Item price
+store_id | int | Store id
+
+**Response**
+
+**Status code 200**
+
+   ```buildoutcfg
+    {"name": "cars", "items": []}
+   ```
+
+Field | Type |Description
+------------ | -------------| -------------
+name | str | Store name
+items | list | List of store items
+
+
+</details>
+
+<details>
+  <summary>Change item</summary>
+
+   <span style="color:green">**PUT**</span>
+   ```buildoutcfg
+    https://stores-tests-api.herokuapp.com/item/{name_item}
+   ```
+Example
+   ```buildoutcfg
+  curl -X PUT
+  https://stores-tests-api.herokuapp.com/item/bmw \
+  -H 'Content-Type: application/json' \
+   -d '{
+        "price": 2000,
+        "store_id": 1
+    }'
+```
+
+**Body**
+
+Field | Type |Description
+------------ | -------------| -------------
+price | int | Item price
+store_id | int | Store id
+
+**Response**
+
+**Status code 200**
+
+   ```buildoutcfg
+    {"name": "bmw", "price": 1947.0, "itemID": 1}
+   ```
+
+Field | Type |Description
+------------ | -------------| -------------
+name | str | Item name
+price | int | Item price
+itemID | int | Item id
+
+</details>
+
+<details>
+  <summary>Get item</summary>
+
+   <span style="color:green">**GET**</span>
+   ```buildoutcfg
+    https://stores-tests-api.herokuapp.com/item/{name_item}
+   ```
+Example
+   ```buildoutcfg
+  curl -X GET
+  https://stores-tests-api.herokuapp.com/item/bmw \
+  -H 'Content-Type: application/json' \
+```
+
+**Response**
+
+**Status code 200**
+
+   ```buildoutcfg
+    {"name": "bmw", "price": 1947.0, "itemID": 1}
+   ```
+
+Field | Type |Description
+------------ | -------------| -------------
+name | str | Item name
+price | int | Item price
+itemID | int | Item id
+</details>
+
+<details>
+  <summary>Get items</summary>
+
+   <span style="color:green">**GET**</span>
+   ```buildoutcfg
+    https://stores-tests-api.herokuapp.com/items
+   ```
+Example
+   ```buildoutcfg
+  curl -X GET
+  https://stores-tests-api.herokuapp.com/items
+  -H 'Content-Type: application/json' \
+```
+
+**Response**
+
+**Status code 200**
+
+   ```buildoutcfg
+    [{"name": "bmw", "price": 1947.0, "itemID": 1}]
+   ```
+
+Field | Type |Description
+------------ | -------------| -------------
+name | str | Item name
+price | int | Item price
+itemID | int | Item id
+
+</details>
+
+### User balance
+
+<details>
+<summary>User balance</summary>
+
+<span style="color:green">**POST**</span>
+   ```buildoutcfg
+    https://stores-tests-api.herokuapp.com/balance/{user_id}
+   ```
+Example
+   ```buildoutcfg
+  curl -X POST
+  https://stores-tests-api.herokuapp.com/balance/1 \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "balance" : 2000,
+}'
+```
+
+**Body**
+
+Field | Type |Description
+------------ | -------------| -------------
+balance | int | Add money for user
+
+**Response**
+
+**Status code 201**
+
+   ```buildoutcfg
+   {"message": "User balance has been updated. New balance is 4106.0"}
+   ```
+
+Field | Type |Description
+------------ | -------------| -------------
+message | str | Success message
+
+</details>
+
+<details>
+<summary>Get user balance</summary>
+
+<span style="color:green">**GET**</span>
+   ```buildoutcfg
+    https://stores-tests-api.herokuapp.com/balance/{user_id}
+   ```
+Example
+   ```buildoutcfg
+  curl -X GET
+  https://stores-tests-api.herokuapp.com/balance/1 \
+  -H 'Content-Type: application/json' \
+```
+
+**Response**
+
+**Status code 200**
+
+   ```buildoutcfg
+   {"message": "User balance has been updated. New balance is 4106.0"}
+   ```
+
+Field | Type |Description
+------------ | -------------| -------------
+message | str | Success message
+
+</details>
+
+### Pay
+
+<details>
+<summary>Buying a product</summary>
+
+<span style="color:green">**POST**</span>
+   ```buildoutcfg
+    https://stores-tests-api.herokuapp.com/pay/{user_id}
+   ```
+Example
+   ```buildoutcfg
+  curl -X POST
+  https://stores-tests-api.herokuapp.com/pay/1 \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "itemId" : 1,
+}'
+```
+
+**Body**
+
+Field | Type |Description
+------------ | -------------| -------------
+itemId | int | item id
+
+**Response**
+
+**Status code 200**
+
+   ```buildoutcfg
+   {"message": "Payment was successful", "balance": 2159.0, "name": "bmw", "price": 1947.0}
+   ```
+
+Field | Type |Description
+------------ | -------------| -------------
+message | str | Success message
+balance | int | New balance
+name | str | Name of the purchased product
+
 
 </details>
