@@ -14,6 +14,10 @@ class UserRegister(Resource):
     @staticmethod
     def post():
         data = UserRegister.parser.parse_args()
+        if data["username"] is None or data["password"] is None:
+            return {
+                "message": "Username and password are required fields",
+            }, 400
 
         find_user = UserModel.find_by_username(data["username"])
 
