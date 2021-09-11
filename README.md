@@ -84,7 +84,7 @@ username | str | Make a user username
 
 **Response**
 
-**Status code 200**
+**Status code 201**
 
    ```buildoutcfg
     {'message': 'User created successfully.', 'uuid': 1}
