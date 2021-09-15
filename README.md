@@ -6,6 +6,14 @@ Welcome to Restful-app an API that you can use to learn more about API Testing o
 The API comes with projects tests on Python (coming soon JS and JAVA).
 Restful-app also comes with detailed API documentation to help get you started with your API testing straight away.
 
+#### Examples of api tests in different languages
+| Language      | Link           | Status  |
+| ------------- |:-------------:| -----:|
+| Python      | https://github.com/berpress/python-api-tests |in progress |
+| JS      |  https://github.com/berpress/js-api-tests|in progress |
+| TS |not added yet, you can do this |not added|
+| JAVA |not added yet, you can do this|not added|
+
 ### Testing app:
 https://stores-tests-api.herokuapp.com
 
