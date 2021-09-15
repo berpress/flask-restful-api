@@ -10,7 +10,7 @@ Restful-app also comes with detailed API documentation to help get you started w
 | Language      | Link           | Status  |
 | ------------- |:-------------:| -----:|
 | Python      | https://github.com/berpress/python-api-tests |in progress |
-| JS      |  https://github.com/berpress/js-api-tests|in progress |
+| JS      |  https://github.com/berpress/js-api-tests|[![NodeJS Tests CI](https://github.com/berpress/js-api-tests/actions/workflows/tests.yml/badge.svg)](https://github.com/berpress/js-api-tests/actions/workflows/tests.yml) |
 | TS |not added yet, you can do this |not added|
 | JAVA |not added yet, you can do this|not added|
 
