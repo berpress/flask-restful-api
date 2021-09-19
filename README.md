@@ -6,6 +6,8 @@ Welcome to Restful-app an API that you can use to learn more about API Testing o
 The API comes with projects tests on Python (coming soon JS and JAVA).
 Restful-app also comes with detailed API documentation to help get you started with your API testing straight away.
 
+The test application simulates the operation of a store. You can create users, add an item and pay for it.
+
 #### Examples of api tests in different languages
 | Language      | Link           | Status  |
 | ------------- |:-------------:| -----:|
@@ -16,6 +18,9 @@ Restful-app also comes with detailed API documentation to help get you started w
 
 ### Testing app:
 https://stores-tests-api.herokuapp.com
+
+Swagger: https://app.swaggerhub.com/apis-docs/berpress/flask-rest-api/1.0.0
+
 
 Also, you can use Docker and test this app local
 
@@ -53,14 +58,19 @@ tests | Run all tests
 ## API Documentation
 
 First, learn about  sequence of entity creation
-1. Create user **POST /register**
-2. Auth with data from step 1 **POST /auth**. You will get auth token
-3. Add user info **POST /user_info**. This action is required to pay for the item.
-4. Add store **POST /store**
-5. Add item **POST /item** to store from step 4
-6. Increase the balance for the user **POST /balance**.
-7. Pay item **POST /pay**
+1. 👪 Create user **POST /register**
+2. 🔑 Auth with data from step 1 **POST /auth**.You will get auth token
+3. 📝 Add user info **POST /user_info**. This action is required to pay for the item.
+4. 🏪 Add store **POST /store**
+5. 🚗 Add item **POST /item** to store from step 4
+6. 💵 Increase the balance for the user **POST /balance**.
+7. 💳 Pay item **POST /pay**
 
+See swagger https://app.swaggerhub.com/apis-docs/berpress/flask-rest-api/1.0.0
+
+or
+<details>
+<summary>Documentation</summary>
 
 ## Register
 ### Register user
@@ -108,7 +118,6 @@ uuid | str | user uuid
 
 ## Authentication
 ### Authentication user
-
 <details>
   <summary>Authentication user</summary>
 
@@ -629,4 +638,5 @@ balance | int | New balance
 name | str | Name of the purchased product
 
 
+</details>
 </details>
