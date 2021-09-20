@@ -24,6 +24,11 @@ Swagger: https://app.swaggerhub.com/apis-docs/berpress/flask-rest-api/1.0.0
 
 Also, you can use Docker and test this app local
 
+```bash
+docker pull litovsky/flask_store_app
+docker run -p 5000:5000 litovsky/flask_store_app
+```
+
 ### App use:
 python 3.8/requests/pytest/flask
 
