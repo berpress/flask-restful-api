@@ -22,7 +22,7 @@ class UserInfo(Resource):
     def get(self, uuid):
         info = UserInfoModel.find_by_id(uuid)
         if info:
-            return info.json(uuid)
+            return info.json(info.id)
         return {"message": "User info not found"}, 404
 
     @jwt_required()

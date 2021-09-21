@@ -1,0 +1,113 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="8">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="p" />
+            <item index="7" class="java.lang.String" itemvalue="data-test" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyCompatibilityInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ourVersions">
+        <value>
+          <list size="4">
+            <item index="0" class="java.lang.String" itemvalue="3.6" />
+            <item index="1" class="java.lang.String" itemvalue="3.7" />
+            <item index="2" class="java.lang.String" itemvalue="3.8" />
+            <item index="3" class="java.lang.String" itemvalue="3.9" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="56">
+            <item index="0" class="java.lang.String" itemvalue="psycopg2" />
+            <item index="1" class="java.lang.String" itemvalue="pytest-metadata" />
+            <item index="2" class="java.lang.String" itemvalue="schema" />
+            <item index="3" class="java.lang.String" itemvalue="greenlet" />
+            <item index="4" class="java.lang.String" itemvalue="more-itertools" />
+            <item index="5" class="java.lang.String" itemvalue="pre-commit" />
+            <item index="6" class="java.lang.String" itemvalue="crayons" />
+            <item index="7" class="java.lang.String" itemvalue="flake8" />
+            <item index="8" class="java.lang.String" itemvalue="pytest-testrail" />
+            <item index="9" class="java.lang.String" itemvalue="Faker" />
+            <item index="10" class="java.lang.String" itemvalue="certifi" />
+            <item index="11" class="java.lang.String" itemvalue="soupsieve" />
+            <item index="12" class="java.lang.String" itemvalue="urllib3" />
+            <item index="13" class="java.lang.String" itemvalue="pendulum" />
+            <item index="14" class="java.lang.String" itemvalue="pyee" />
+            <item index="15" class="java.lang.String" itemvalue="beautifulsoup4" />
+            <item index="16" class="java.lang.String" itemvalue="cattrs" />
+            <item index="17" class="java.lang.String" itemvalue="nodeenv" />
+            <item index="18" class="java.lang.String" itemvalue="identify" />
+            <item index="19" class="java.lang.String" itemvalue="allure-pytest" />
+            <item index="20" class="java.lang.String" itemvalue="toml" />
+            <item index="21" class="java.lang.String" itemvalue="attrs" />
+            <item index="22" class="java.lang.String" itemvalue="colorama" />
+            <item index="23" class="java.lang.String" itemvalue="configparser" />
+            <item index="24" class="java.lang.String" itemvalue="virtualenv" />
+            <item index="25" class="java.lang.String" itemvalue="allure-python-commons" />
+            <item index="26" class="java.lang.String" itemvalue="cfgv" />
+            <item index="27" class="java.lang.String" itemvalue="requests" />
+            <item index="28" class="java.lang.String" itemvalue="pytest-playwright" />
+            <item index="29" class="java.lang.String" itemvalue="playwright" />
+            <item index="30" class="java.lang.String" itemvalue="lazy-object-proxy" />
+            <item index="31" class="java.lang.String" itemvalue="pylint" />
+            <item index="32" class="java.lang.String" itemvalue="wrapt" />
+            <item index="33" class="java.lang.String" itemvalue="pybitcointools" />
+            <item index="34" class="java.lang.String" itemvalue="isort" />
+            <item index="35" class="java.lang.String" itemvalue="astroid" />
+            <item index="36" class="java.lang.String" itemvalue="pytest" />
+            <item index="37" class="java.lang.String" itemvalue="wcwidth" />
+            <item index="38" class="java.lang.String" itemvalue="chardet" />
+            <item index="39" class="java.lang.String" itemvalue="locust" />
+            <item index="40" class="java.lang.String" itemvalue="pyzmq" />
+            <item index="41" class="java.lang.String" itemvalue="geventhttpclient" />
+            <item index="42" class="java.lang.String" itemvalue="py" />
+            <item index="43" class="java.lang.String" itemvalue="zope.interface" />
+            <item index="44" class="java.lang.String" itemvalue="packaging" />
+            <item index="45" class="java.lang.String" itemvalue="msgpack" />
+            <item index="46" class="java.lang.String" itemvalue="psutil" />
+            <item index="47" class="java.lang.String" itemvalue="PyYAML" />
+            <item index="48" class="java.lang.String" itemvalue="webdriver-manager" />
+            <item index="49" class="java.lang.String" itemvalue="gevent" />
+            <item index="50" class="java.lang.String" itemvalue="Jinja2" />
+            <item index="51" class="java.lang.String" itemvalue="ConfigArgParse" />
+            <item index="52" class="java.lang.String" itemvalue="pyflakes" />
+            <item index="53" class="java.lang.String" itemvalue="pycodestyle" />
+            <item index="54" class="java.lang.String" itemvalue="six" />
+            <item index="55" class="java.lang.String" itemvalue="typing-extensions" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E203" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="str.validator" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
