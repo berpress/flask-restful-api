@@ -202,6 +202,7 @@ def test_add_balance(client):
         response.json.get("message")
         == "User balance has been updated. New balance is 2000.0"
     )
+    assert response.json.get("balance") == 2000.0
 
 
 def test_get_balance(client):
@@ -212,6 +213,7 @@ def test_get_balance(client):
     response = client.get("/balance/1", headers={"Authorization": f"JWT {token}"})
     assert response.status_code == 200
     assert response.json.get("message") == "User balance is 2000.0"
+    assert response.json.get("balance") == 2000.0
 
 
 def test_pay_item(client):

@@ -15,7 +15,10 @@ class Balance(Resource):
     def get(self, uuid):
         user_balance = BalanceModel.find_by_id(uuid)
         if user_balance:
-            return {"message": f"User balance is {user_balance.balance}"}, 200
+            return {
+                "message": f"User balance is {user_balance.balance}",
+                "balance": user_balance.balance,
+            }, 200
         return {"message": "Balance not found. Add money for user."}, 404
 
     @jwt_required()
@@ -36,5 +39,6 @@ class Balance(Resource):
             return {"message": "An error occurred add balance."}, 500
         return {
             "message": f"User balance has been updated. New balance is "
-            f"{balance.balance}"
+            f"{balance.balance}",
+            "balance": balance.balance,
         }, 201
