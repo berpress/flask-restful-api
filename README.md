@@ -22,6 +22,8 @@ https://stores-tests-api.herokuapp.com
 
 Swagger: https://app.swaggerhub.com/apis-docs/berpress/flask-rest-api/1.0.0
 
+Description (English and Russian languages) https://berpress.github.io/flask-restful-api/
+
 
 Also, you can use Docker and test this app local
 
