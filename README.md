@@ -16,6 +16,8 @@ The test application simulates the operation of a store. You can create users, a
 | JS      |  https://github.com/berpress/js-api-tests|[![NodeJS Tests CI](https://github.com/berpress/js-api-tests/actions/workflows/tests.yml/badge.svg)](https://github.com/berpress/js-api-tests/actions/workflows/tests.yml) |
 | TS |not added yet, you can do this |not added|
 | JAVA |not added yet, you can do this|not added|
+| Postman |https://github.com/berpress/postman-api-tests|✅🇷🇺|
+
 
 ### Testing app:
 https://stores-tests-api.herokuapp.com
