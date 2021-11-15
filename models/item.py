@@ -7,17 +7,27 @@ class ItemModel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
     price = db.Column(db.Float(precision=2))
+    image = db.Column(db.String(80))
+    description = db.Column(db.String(240))
 
     store_id = db.Column(db.Integer, db.ForeignKey("stores.id"))
     store = db.relationship("StoreModel")
 
-    def __init__(self, name, price, store_id):
+    def __init__(self, name, price, store_id, description, image):
         self.name = name
         self.price = price
         self.store_id = store_id
+        self.description = description
+        self.image = image
 
     def json(self, uuid):
-        return {"name": self.name, "price": self.price, "itemID": uuid}
+        return {
+            "name": self.name,
+            "price": self.price,
+            "itemID": uuid,
+            "description": self.description,
+            "image": self.image,
+        }
 
     @classmethod
     def find_by_name(cls, name):

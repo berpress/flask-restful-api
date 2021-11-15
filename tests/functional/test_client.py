@@ -145,7 +145,12 @@ def test_add_items(client):
     response = client.post("/auth", json=payload_register)
     assert response.status_code == 200
     token = response.json.get("access_token")
-    payload_item = {"price": 2000, "store_id": 1}
+    payload_item = {
+        "price": 2000,
+        "store_id": 1,
+        "description": "test description",
+        "image": "image.png",
+    }
     response = client.post(
         "/item/bmw", headers={"Authorization": f"JWT {token}"}, json=payload_item
     )
@@ -159,7 +164,12 @@ def test_change_items(client):
     response = client.post("/auth", json=payload_register)
     assert response.status_code == 200
     token = response.json.get("access_token")
-    payload_item = {"price": 1947, "store_id": 1}
+    payload_item = {
+        "price": 1947,
+        "store_id": 1,
+        "description": "test description",
+        "image": "image.png",
+    }
     response = client.put(
         "/item/bmw", headers={"Authorization": f"JWT {token}"}, json=payload_item
     )

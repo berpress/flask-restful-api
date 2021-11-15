@@ -11,6 +11,10 @@ class Item(Resource):
     parser.add_argument(
         "store_id", type=int, required=True, help="Every item needs a store_id."
     )
+    parser.add_argument(
+        "description", type=str, required=False, help="Item description."
+    )
+    parser.add_argument("image", type=str, required=False, help="Link to image.")
 
     @jwt_required()
     def get(self, name):
@@ -22,9 +26,7 @@ class Item(Resource):
     @jwt_required()
     def post(self, name):
         if ItemModel.find_by_name(name):
-            return {
-                "message": "An item with name '{}' already exists.".format(name)
-            }, 400
+            return {"message": "An item with name {} already exists.".format(name)}, 400
         data = Item.parser.parse_args()
         item = ItemModel(name, **data)
         try:
