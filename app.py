@@ -9,8 +9,12 @@ from security import authenticate, identity
 from resources.user import UserRegister
 from resources.item import Item, ItemList
 from resources.store import Store, StoreList
+from flask_cors import CORS
+
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config["CORS_HEADERS"] = "Content-Type"
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["PROPAGATE_EXCEPTIONS"] = True

@@ -185,6 +185,18 @@ async = ["asgiref (>=3.2)"]
 dotenv = ["python-dotenv"]
 
 [[package]]
+name = "flask-cors"
+version = "3.0.10"
+description = "A Flask extension adding a decorator for CORS support"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+Flask = ">=0.9"
+Six = "*"
+
+[[package]]
 name = "flask-jwt"
 version = "0.3.2"
 description = "JWT token authentication for Flask apps"
@@ -224,14 +236,6 @@ python-versions = ">= 2.7, != 3.0.*, != 3.1.*, != 3.2.*, != 3.3.*"
 [package.dependencies]
 Flask = ">=0.10"
 SQLAlchemy = ">=0.8.0"
-
-[[package]]
-name = "flaskr"
-version = "1.0.0"
-description = ""
-category = "main"
-optional = false
-python-versions = "*"
 
 [[package]]
 name = "greenlet"
@@ -589,7 +593,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "0a7cd56f138b8a4f5f0e4f188440f38edf7ab8a1876e2b278208a7424aa39766"
+content-hash = "46b24c58c689c8303fd46bc7bcc27061d851d85d5a6dd0eb9a1505344faa9a7d"
 
 [metadata.files]
 aiohttp = [
@@ -695,6 +699,10 @@ flask = [
     {file = "Flask-2.0.1-py3-none-any.whl", hash = "sha256:a6209ca15eb63fc9385f38e452704113d679511d9574d09b2cf9183ae7d20dc9"},
     {file = "Flask-2.0.1.tar.gz", hash = "sha256:1c4c257b1892aec1398784c63791cbaa43062f1f7aeb555c4da961b20ee68f55"},
 ]
+flask-cors = [
+    {file = "Flask-Cors-3.0.10.tar.gz", hash = "sha256:b60839393f3b84a0f3746f6cdca56c1ad7426aa738b70d6c61375857823181de"},
+    {file = "Flask_Cors-3.0.10-py2.py3-none-any.whl", hash = "sha256:74efc975af1194fc7891ff5cd85b0f7478be4f7f59fe158102e91abb72bb4438"},
+]
 flask-jwt = [
     {file = "Flask-JWT-0.3.2.tar.gz", hash = "sha256:49c0672fbde0f1cd3374bd834918d28956e3c521c7e00089cdc5380d323bd0ad"},
 ]
@@ -705,9 +713,6 @@ flask-restful = [
 flask-sqlalchemy = [
     {file = "Flask-SQLAlchemy-2.5.1.tar.gz", hash = "sha256:2bda44b43e7cacb15d4e05ff3cc1f8bc97936cc464623424102bfc2c35e95912"},
     {file = "Flask_SQLAlchemy-2.5.1-py2.py3-none-any.whl", hash = "sha256:f12c3d4cc5cc7fdcc148b9527ea05671718c3ea45d50c7e732cceb33f574b390"},
-]
-flaskr = [
-    {file = "flaskr-1.0.0-py3.6.egg", hash = "sha256:53a291da375d37d08dc34490fe56dbb2c979e51b9cb170a7fed62cf91ac25868"},
 ]
 greenlet = [
     {file = "greenlet-1.1.0-cp27-cp27m-macosx_10_14_x86_64.whl", hash = "sha256:60848099b76467ef09b62b0f4512e7e6f0a2c977357a036de602b653667f5f4c"},
