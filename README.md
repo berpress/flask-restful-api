@@ -9,9 +9,10 @@ Restful-app also comes with detailed API documentation to help get you started w
 
 The test application simulates the operation of a store. You can create users, add an item and pay for it.
 
-For **example**, you can see product 💳shop, that use this api
+For **example**, you can see productshop 💳, that use this api
 
-app: https://berpress.github.io/react-shop/
+app: https://berpress.github.io/react-shop
+
 git: https://github.com/berpress/react-shop
 
 #### Examples of api tests in different languages
