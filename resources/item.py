@@ -60,3 +60,12 @@ class Item(Resource):
 class ItemList(Resource):
     def get(self):
         return {"items": list(map(lambda x: x.json(x.id), ItemModel.query.all()))}
+
+
+class WelcomeList(Resource):
+    def get(self):
+        return {
+            "GitHub": "https://github.com/berpress/flask-restful-api",
+            "swagger": "https://app.swaggerhub.com/apis-docs/berpress/flask-rest-"
+            "api/1.0.0",
+        }
