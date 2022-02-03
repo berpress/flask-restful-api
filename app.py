@@ -7,7 +7,7 @@ from resources.pay import Pay
 from resources.user_info import UserInfo
 from security import authenticate, identity
 from resources.user import UserRegister
-from resources.item import Item, ItemList
+from resources.item import Item, ItemList, WelcomeList
 from resources.store import Store, StoreList
 from flask_cors import CORS
 
@@ -31,6 +31,7 @@ api.add_resource(UserRegister, "/register")
 api.add_resource(Balance, "/balance/<int:uuid>")
 api.add_resource(Pay, "/pay/<int:uuid>")
 api.add_resource(UserInfo, "/user_info/<int:uuid>")
+api.add_resource(WelcomeList, "/")
 
 
 if __name__ == "__main__":
