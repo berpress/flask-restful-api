@@ -36,8 +36,13 @@ Description (English and Russian languages) https://berpress.github.io/flask-res
 Also, you can use Docker and test this app local
 
 ```bash
-docker pull litovsky/flask_store_app
-docker run -p 5000:5000 litovsky/flask_store_app
+docker push litovsky/flask-api-test
+docker run -d -p 56733:80 litovsky/flask-api-test
+```
+
+open in browser and check
+```bash
+http://localhost:56733
 ```
 
 ### App use:

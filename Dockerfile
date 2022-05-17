@@ -1,9 +1,19 @@
-FROM ubuntu:focal
-MAINTAINER Alexander Litovsky 'berpress@gmail.com'
-RUN apt-get update && apt-get install -y python3 python3-pip && \
-    update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1 && \
-    update-alternatives --install /usr/bin/python python /usr/bin/python3 1
-COPY . /app
+ENV PIP_DISABLE_PIP_VERSION_CHECK=on
+RUN pip install poetry
 WORKDIR /app
-RUN pip install -r requirements.txt
-CMD python app.py
+COPY poetry.lock pyproject.toml /app/
+
+# 1. Install project dependencies
+RUN poetry config virtualenvs.create false
+RUN poetry install --no-interaction
+
+# 2. Feature-parity with node.js base images.
+RUN apt-get update && apt-get install -y --no-install-recommends git ssh
+
+# 3. Add tools
+RUN apt-get update && apt-get install -y \
+curl
+RUN apt-get install unzip
+
+COPY . /app
+CMD [ "python", "app.py"]
