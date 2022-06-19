@@ -20,7 +20,7 @@ git: https://github.com/berpress/react-shop
 | ------------- |:-------------:| -----:|
 | Python      | https://github.com/berpress/python-api-tests |[![tests](https://github.com/berpress/python-api-tests/actions/workflows/tests.yml/badge.svg)](https://github.com/berpress/python-api-tests/actions/workflows/tests.yml)|
 | JS      |  https://github.com/berpress/js-api-tests|[![NodeJS Tests CI](https://github.com/berpress/js-api-tests/actions/workflows/tests.yml/badge.svg)](https://github.com/berpress/js-api-tests/actions/workflows/tests.yml) |
-| TS |not added yet, you can do this |not added|
+| TS | https://github.com/berpress/TS-api-tests |not added|
 | JAVA |not added yet, you can do this|not added|
 | Postman |https://github.com/berpress/postman-api-tests|✅🇷🇺|
 
