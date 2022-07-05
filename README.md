@@ -78,6 +78,11 @@ tests | Run all tests
 
 ## API Documentation
 
+### Some requests require an authorization token. Use header like 
+```buildoutcfg
+    Authorization: "JWT {token}
+```
+
 First, learn about  sequence of entity creation
 1. 👪 Create user **POST /register**
 2. 🔑 Auth with data from step 1 **POST /auth**.You will get auth token
