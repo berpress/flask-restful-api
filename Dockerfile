@@ -1,19 +1,11 @@
-ENV PIP_DISABLE_PIP_VERSION_CHECK=on
-RUN pip install poetry
-WORKDIR /app
-COPY poetry.lock pyproject.toml /app/
+FROM python:3.8
 
-# 1. Install project dependencies
-RUN poetry config virtualenvs.create false
-RUN poetry install --no-interaction
+WORKDIR /python-docker
 
-# 2. Feature-parity with node.js base images.
-RUN apt-get update && apt-get install -y --no-install-recommends git ssh
+COPY requirements.txt requirements.txt
+RUN pip3 install --upgrade pip
+RUN pip3 install -r requirements.txt
 
-# 3. Add tools
-RUN apt-get update && apt-get install -y \
-curl
-RUN apt-get install unzip
+COPY . .
 
-COPY . /app
-CMD [ "python", "app.py"]
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]

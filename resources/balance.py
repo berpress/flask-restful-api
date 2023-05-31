@@ -19,7 +19,11 @@ class Balance(Resource):
                 "message": f"User balance is {user_balance.balance}",
                 "balance": user_balance.balance,
             }, 200
-        return {"message": "Balance not found. Add money for user."}, 404
+        return {
+            "message": "alance not found. Add money for user",
+            "code": "BalanceNotFound",
+            "status": 404
+        }, 404
 
     @jwt_required()
     def post(self, uuid):
@@ -27,7 +31,11 @@ class Balance(Resource):
         data = Balance.parser.parse_args()
         balance = BalanceModel.find_by_id(uuid)
         if not user:
-            return {"message": "User not found."}, 404
+            return {
+                "message": "User not found",
+                "code": "UserNotFound",
+                "status": 404
+            }, 404
         if balance:
             balance.balance = data["balance"] + balance.balance
         else:
@@ -36,7 +44,11 @@ class Balance(Resource):
         try:
             balance.save_to_db()
         except:
-            return {"message": "An error occurred add balance."}, 500
+            return {
+                "message": "An error occurred inserting user info",
+                "code": "Error",
+                "status": 500
+            }, 500
         return {
             "message": f"User balance has been updated. New balance is "
             f"{balance.balance}",

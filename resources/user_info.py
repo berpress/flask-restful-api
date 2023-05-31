@@ -23,21 +23,37 @@ class UserInfo(Resource):
         info = UserInfoModel.find_by_id(uuid)
         if info:
             return info.json(info.id)
-        return {"message": "User info not found"}, 404
+        return {
+            "message": "User info not found",
+            "code": "UserNotFound",
+            "status": 404
+        }, 404
 
     @jwt_required()
     def post(self, uuid):
         if not UserModel.find_by_id(uuid):
-            return {"message": "User not found"}, 404
+            return {
+                "message": "User not found",
+                "code": "UserNotFound",
+                "status": 404
+            }, 404
         data = UserInfo.root_parser.parse_args()
         info = UserInfoModel.find_by_id(uuid)
         if info:
-            return {"message": "User info already exists"}, 400
+            return {
+                "message": "User info already exists",
+                "code": "UserExist",
+                "status": 400
+            }, 400
         info = UserInfoModel(uuid, **data)
         try:
             info.save_to_db()
         except:
-            return {"message": "An error occurred inserting user info."}, 500
+            return {
+                "message": "An error occurred inserting user info",
+                "code": "Error",
+                "status": 500
+            }, 500
         return {"message": "User info created successfully."}
 
     @jwt_required()
@@ -45,8 +61,12 @@ class UserInfo(Resource):
         info = UserInfoModel.find_by_id(uuid)
         if info:
             info.delete_from_db()
-            return {"message": "User info deleted."}, 200
-        return {"message": "User info not found."}, 404
+            return {"message": "User info deleted"}, 200
+        return {
+            "message": "User info not found",
+            "code": "UserNotFound",
+            "status": 404
+        }, 404
 
     @jwt_required()
     def put(self, uuid):
@@ -59,6 +79,10 @@ class UserInfo(Resource):
             info.phone = data["phone"]
             info.email = data["email"]
         else:
-            return {"message": "User info not found."}, 404
+            return {
+                "message": "User info not found",
+                "code": "UserNotFound",
+                "status": 404
+            }, 404
         info.save_to_db()
-        return {"message": "User info updated successfully."}
+        return {"message": "User info updated successfully"}

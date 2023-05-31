@@ -17,14 +17,17 @@ class UserRegister(Resource):
         if data["username"] is None or data["password"] is None:
             return {
                 "message": "Username and password are required fields",
+                "code": "BadRequest",
+                "status": 400
             }, 400
 
         find_user = UserModel.find_by_username(data["username"])
 
         if find_user:
             return {
-                "message": "A user with that username already exists",
-                "uuid": find_user.id,
+                "message": f"A user with that username already exists, id is {find_user.id}",
+                "code": "BadRequest",
+                "status": 400
             }, 400
 
         user = UserModel(data["username"], data["password"])

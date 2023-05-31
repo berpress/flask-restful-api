@@ -666,3 +666,9 @@ name | str | Name of the purchased product
 
 </details>
 </details>
+
+Docker
+```
+Docker build -t flask-api-test-2 .  
+docker run -p 5001:5000 -t -i flask-api-test-
+```

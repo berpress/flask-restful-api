@@ -21,18 +21,30 @@ class Item(Resource):
         item = ItemModel.find_by_name(name)
         if item:
             return item.json(item.id)
-        return {"message": "Item not found"}, 404
+        return {
+            "message": "Item not found",
+            "code": "ItemNotFound",
+            "status": 404
+        }, 404
 
     @jwt_required()
     def post(self, name):
         if ItemModel.find_by_name(name):
-            return {"message": "An item with name {} already exists.".format(name)}, 400
+            return {
+                "message": 'An item with name {} already exists'.format(name),
+                "code": "BadRequest",
+                "status": 400
+            }, 400
         data = Item.parser.parse_args()
         item = ItemModel(name, **data)
         try:
             item.save_to_db()
         except:
-            return {"message": "An error occurred inserting the item."}, 500
+            return {
+                "message": "An error occurred inserting user info",
+                "code": "Error",
+                "status": 500
+            }, 500
         item_id = item.find_by_name(name).id
         return item.json(item_id), 201
 
@@ -42,7 +54,11 @@ class Item(Resource):
         if item:
             item.delete_from_db()
             return {"message": "Item deleted."}
-        return {"message": "Item not found."}, 404
+        return {
+            "message": "Item not found",
+            "code": "ItemNotFound",
+            "status": 404
+        }, 404
 
     @jwt_required()
     def put(self, name):
